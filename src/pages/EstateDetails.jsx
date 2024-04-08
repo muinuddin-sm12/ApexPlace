@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { IoLocationOutline } from "react-icons/io5";
 import { LuScale3D } from "react-icons/lu";
 import { useParams } from "react-router-dom";
@@ -23,15 +24,28 @@ const EstateDetails = () => {
       </div>
     );
   }
-  const { image_url, estate_title, segment_name, price, status, area, location, description, facilities} = estate;
+  const {
+    image_url,
+    estate_title,
+    segment_name,
+    price,
+    status,
+    area,
+    location,
+    description,
+    facilities,
+  } = estate;
   return (
-    <div className="flex flex-col w-[60%] mx-auto mt-10 relative">
+    <div className="flex flex-col w-[60%] mx-auto mt-10 relative mb-10">
+      <Helmet>
+        <title>ApexPlace | Estate Details</title>
+      </Helmet>
       <div className="w-full max-h-[420px] overflow-hidden mx-auto flex justify-center items-center">
         <img className="max-w-full" src={image_url} alt="" />
       </div>
       <p className="text-2xl mt-4 font-semibold">{estate_title}</p>
       <small className="text-zinc-400">{segment_name}</small>
-      
+
       <div>
         <ul>
           <p className="text-zinc-900 font-medium">Facilities:</p>
@@ -52,7 +66,9 @@ const EstateDetails = () => {
       </div>
       <h3 className="pb-2 text-xl font-medium text-zinc-600 mb-4">{price}</h3>
       <div>
-        <p className="font-medium">Description: <span className="font-normal">{description}</span></p>
+        <p className="font-medium">
+          Description: <span className="font-normal">{description}</span>
+        </p>
       </div>
       <div className="absolute text-sm top-[1%] left-[1%] bg-red-500 text-white px-2 rounded-md">
         {status}

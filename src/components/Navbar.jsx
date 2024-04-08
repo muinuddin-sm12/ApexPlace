@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user);
   return (
     <div className="navbar bg-base-100 max-w-[1536px] mx-auto px-10 py-4">
       <div className="navbar-start">
@@ -45,7 +49,9 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1" : "text-black"
+              isActive
+                ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
+                : "text-black"
             }
           >
             Home
@@ -53,7 +59,9 @@ const Navbar = () => {
           <NavLink
             to="/update-profile"
             className={({ isActive }) =>
-              isActive ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1" : "text-black"
+              isActive
+                ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
+                : "text-black"
             }
           >
             Update Profile
@@ -61,15 +69,44 @@ const Navbar = () => {
           <NavLink
             to="/user-details"
             className={({ isActive }) =>
-              isActive ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1" : "text-black"
+              isActive
+                ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
+                : "text-black"
             }
           >
             User Details
           </NavLink>
+          {user && (
+            <>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
+                    : "text-black"
+                }
+              >
+                About
+              </NavLink>
+            </>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {user ? (
+          <div className="flex items-center gap-2">
+              <div className="w-12 rounded-full  border-4 tooltip  tooltip-bottom" data-tip={user?.displayName || "user name not found"}>
+                <img className="rounded-full" src={user?.photoURL || "#"} />
+              </div>
+            <button onClick={logOut} className="btn btn-sm text-white text-base bg-sky-400">
+              Logout
+            </button>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="btn btn-sm text-base text-white bg-sky-400">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );
