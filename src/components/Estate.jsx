@@ -34,7 +34,7 @@ const Estate = ({ estate }) => {
       <div className="flex justify-between items-center px-2 border-t py-3">
         <h3 className="text-zinc-500 font-semibold">{price}</h3>
         <Link
-          to="/"
+          to={`/estate/${id}`}
           className="bg-sky-400 text-white font-medium px-2 py-1 rounded-md"
         >
           View Property

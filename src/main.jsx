@@ -5,6 +5,7 @@ import "./index.css";
 import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
 import { HelmetProvider } from "react-helmet-async";
+import EstateDetails from "./pages/EstateDetails";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,10 @@ const router = createBrowserRouter([
         element: <Home />,
         loader:()=> fetch('/data.json')
       },
-      {},
+      {
+        path: "/estate/:id",
+        element: <EstateDetails/>
+      },
     ],
   },
 ]);
