@@ -16,6 +16,8 @@ const Register = () => {
     const url = e.target.url.value;
     const password = e.target.password.value;
 
+    console.log(name,url)
+
     if (password.length < 6) {
       setError("Password must be at least 6 Character!");
       return;
@@ -36,6 +38,7 @@ const Register = () => {
     userRegister(email, password);
     updateUserProfile(name, url);
   };
+
   return (
     <div className="min-h-[calc(100vh-80px)]">
       <Helmet>
