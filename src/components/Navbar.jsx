@@ -56,17 +56,21 @@ const Navbar = () => {
           >
             Home
           </NavLink>
-          <NavLink
-            to="/update-profile"
-            className={({ isActive }) =>
-              isActive
-                ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
-                : "text-black"
-            }
-          >
-            Update Profile
-          </NavLink>
-          <NavLink
+          {user && (
+            <>
+              <NavLink
+                to="/update-profile"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
+                    : "text-black"
+                }
+              >
+                Update Profile
+              </NavLink>
+            </>
+          )}
+          {/* <NavLink
             to="/user-details"
             className={({ isActive }) =>
               isActive
@@ -75,7 +79,7 @@ const Navbar = () => {
             }
           >
             User Details
-          </NavLink>
+          </NavLink> */}
           {user && (
             <>
               <NavLink
@@ -95,16 +99,27 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <div className="flex items-center gap-2">
-              <div className="w-12 rounded-full  border-4 tooltip  tooltip-bottom" data-tip={user?.displayName || "user name not found"}>
-                <img className="rounded-full" src={user?.photoURL || "#"} />
-              </div>
-            <button onClick={logOut} className="btn btn-sm text-white text-base bg-sky-400">
+            <div
+              className="w-12 rounded-full  border-4 tooltip  tooltip-bottom"
+              data-tip={user?.displayName || "user name not found"}
+            >
+              <img
+                className="rounded-full"
+                src={user?.photoURL || "https://i.ibb.co/BwsjNp3/1057231.png"}
+              />
+            </div>
+            <button
+              onClick={logOut}
+              className="btn btn-sm text-white text-base bg-sky-400"
+            >
               Logout
             </button>
           </div>
         ) : (
           <Link to="/login">
-            <button className="btn btn-sm text-base text-white bg-sky-400">Login</button>
+            <button className="btn btn-sm text-base text-white bg-sky-400">
+              Login
+            </button>
           </Link>
         )}
       </div>

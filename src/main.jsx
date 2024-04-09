@@ -13,6 +13,7 @@ import ErrorPage from "./components/ErrorPage";
 import { ToastContainer } from 'react-toastify';
 import PrivateRoute from "./components/PrivateRoute";
 import About from "./pages/About";
+import UpdateProfile from "./pages/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register/>
+      },
+      {
+        path: "/update-profile",
+        element: <PrivateRoute><UpdateProfile/></PrivateRoute>
       },
       {
         path: "/about",

@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import { Helmet } from "react-helmet-async";
+// import { toast } from "react-toastify";
 
 const Login = () => {
+  // const notify = () => toast.error("User not registered!");
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state || '/';
@@ -13,6 +15,7 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     userLogin(email, password);
+    // navigate to home page
   };
 
   const handleSocialLogin = (socialProvider)=> {

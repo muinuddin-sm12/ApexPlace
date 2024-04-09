@@ -1,15 +1,23 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location?.state || '/login';
+
+
   const [error, setError] = useState("");
   const notify = () => toast.success("Successfully Registered!");
-  const { userRegister, updateUserProfile } = useContext(AuthContext);
-  const handleRegister = (e) => {
+  const { userRegister, updateUserProfile, logOut } = useContext(AuthContext);
+  
+  
+  const handleRegister = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
@@ -35,8 +43,15 @@ const Register = () => {
 
     setError("");
 
-    userRegister(email, password);
-    updateUserProfile(name, url);
+    try {
+    await  userRegister(email, password);
+    await updateUserProfile(name, url);
+    navigate(from);
+    await logOut();
+
+    } catch (error) {
+      console.log(error.message)
+    }
   };
 
   return (

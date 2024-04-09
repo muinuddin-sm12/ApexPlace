@@ -2,6 +2,7 @@ import { GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged,
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.init";
 import { GoogleAuthProvider } from "firebase/auth";
+import { Navigate } from "react-router-dom";
 
 export const AuthContext = createContext(null);
 // eslint-disable-next-line react/prop-types
@@ -9,13 +10,18 @@ const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const [user, setUser] = useState(null);
+    // console.log(user)
 
     // create user
     const  userRegister = (email, password) => {
         return (createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
             const user = result.user;
-            console.log(user)
+            // console.log(user)
+            if(user){
+                setUser(user)
+                return <Navigate to='/login'></Navigate>
+            }
         }))
     }
     // google login
@@ -40,14 +46,13 @@ const AuthProvider = ({children}) => {
     }
     // login user
     const userLogin = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            console.log(result.user);
-        })
+        return (signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            // console.log(result.user);
+        }))
     }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            // console.log('user in the auth state change', currentUser)
             if(currentUser){
                 setUser(currentUser)
             }else{
