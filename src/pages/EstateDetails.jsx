@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { IoLocationOutline } from "react-icons/io5";
 import { LuScale3D } from "react-icons/lu";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import FadeLoader from "react-spinners/FadeLoader";
 
 const EstateDetails = () => {
@@ -72,6 +72,9 @@ const EstateDetails = () => {
       </div>
       <div className="absolute text-sm top-[1%] left-[1%] bg-red-500 text-white px-2 rounded-md">
         {status}
+      </div>
+      <div className="py-4">
+        <Link className="btn btn-sm bg-sky-400 text-white font-medium" to="/">Go Back</Link>
       </div>
     </div>
   );

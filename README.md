@@ -1,8 +1,29 @@
-# React + Vite
+# ApexPlace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Invest in Your Future with Our Real Estate Deals.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Features
+
+- Responsiveness
+- Good user experience
+- Cross platform
+- User Register and Login
+- Profile update
+
+
+## NPM Packages
+
+- [AOS Package](https://www.npmjs.com/package/aos)
+- [Animate.css](https://animate.style/)
+- [Swiper slider](https://swiperjs.com/)
+
+## Demo
+
+* Live Preview: https://assignment-9-294ac.web.app/
+
+
+## Authors
+
+- [@muinuddin-sm12](https://www.github.com/muinuddin-sm12)

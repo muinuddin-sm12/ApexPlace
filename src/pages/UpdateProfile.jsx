@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../components/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { useLocation, useNavigate } from "react-router-dom";
+// import { toast } from "react-toastify";
 
 const UpdateProfile = () => {
-    const notify = () => toast.success("User Updated Successfully!");
-    const location = useLocation();
-    const navigate = useNavigate();
-    const from = location?.state || '/update-profile';
+    // const notify = () => toast.success("User Updated Successfully!");
+    // const location = useLocation();
+    // const navigate = useNavigate();
+    // const from = location?.state || '/update-profile';
 
     const { user, updateUserProfile} = useContext(AuthContext);
 
