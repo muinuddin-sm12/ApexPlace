@@ -36,7 +36,7 @@ const EstateDetails = () => {
     facilities,
   } = estate;
   return (
-    <div className="flex flex-col w-[60%] mx-auto mt-10 relative mb-10">
+    <div className="flex flex-col w-[90%] md:w-[80%] lg:w-[60%] mx-auto mt-10 relative mb-10">
       <Helmet>
         <title>ApexPlace | Estate Details</title>
       </Helmet>

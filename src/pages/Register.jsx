@@ -4,6 +4,8 @@ import { AuthContext } from "../components/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { IoMdEyeOff } from "react-icons/io";
+import { IoMdEye } from "react-icons/io";
 
 const Register = () => {
 
@@ -11,7 +13,7 @@ const Register = () => {
   const navigate = useNavigate();
   const from = location?.state || '/login';
 
-
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const notify = () => toast.success("Successfully Registered!");
   const { userRegister, updateUserProfile, logOut } = useContext(AuthContext);
@@ -83,13 +85,16 @@ const Register = () => {
               className="input input-bordered"
               required
             />
-            <input
-              type="password"
-              name="password"
-              placeholder="password"
-              className="input input-bordered"
-              required
-            />
+            <div className="flex relative">
+              <input
+                type={showPassword? "text": "password"}
+                name="password"
+                placeholder="password"
+                className="input input-bordered w-full"
+                required
+              />
+              <span onClick={()=> setShowPassword(!showPassword)} className="absolute right-3 top-3 text-2xl">{showPassword? <IoMdEye/>:<IoMdEyeOff/>}</span>
+            </div>
             {error && <small className="text-red-600">{error}</small>}
             <div className="flex items-center gap-1 pb-3">
               Already have account?{" "}

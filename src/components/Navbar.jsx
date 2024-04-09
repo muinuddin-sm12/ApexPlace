@@ -6,7 +6,7 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   // console.log(user);
   return (
-    <div className="navbar bg-base-100 max-w-[1536px] mx-auto px-10 py-4">
+    <div className="navbar bg-base-100 max-w-[1536px] mx-auto px-4 md:px-10 py-4">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,16 +70,6 @@ const Navbar = () => {
               </NavLink>
             </>
           )}
-          {/* <NavLink
-            to="/user-details"
-            className={({ isActive }) =>
-              isActive
-                ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
-                : "text-black"
-            }
-          >
-            User Details
-          </NavLink> */}
           {user && (
             <>
               <NavLink
@@ -100,7 +90,7 @@ const Navbar = () => {
         {user ? (
           <div className="flex items-center gap-2">
             <div
-              className="w-12 rounded-full  border-4 tooltip  tooltip-bottom"
+              className="w-12 h-12 rounded-full flex justify-center items-center  border-4 tooltip  tooltip-bottom"
               data-tip={user?.displayName || "user name not found"}
             >
               <img
