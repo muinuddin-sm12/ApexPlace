@@ -1,50 +1,74 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import 'swiper/css/pagination';
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const Banner = () => {
   return (
     <div className="max-w-[1536px] mx-auto px-4  md:px-10 ">
-      <div className="carousel">
-      <div id="slide1" className="carousel-item h-full relative w-full">
-        <img
-          src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
-          className="w-full h-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide4" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide2" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide2" className="carousel-item relative w-full">
-        <img
-          src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide3" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide3" className="carousel-item relative w-full">
-        <img
-          src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
-          className="w-full"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide2" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide4" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-    </div>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{ delay: 4500, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+      >
+        <SwiperSlide>
+          <div className="slide slide1 h-[20vh] md:h-[35vh] lg:h-[50vh]">
+            <h1 className="text-white text-2xl lg:text-5xl font-semibold md:font-bold leading-6 md:leading-8 mb-3 md:mb-0 w-[90%] lg:w-[60%] mx-auto">
+              Invest in Your Future <br /> with Our Real Estate Deals.
+            </h1>
+            <p className="text-white hidden md:block w-[90%] lg:w-[60%] mx-auto text-sm md:text-base leading-5 py-2 md:py-4">
+              At our platform, we prioritize your financial well-being with
+              utmost dedication. Rest assured, every real estate deal is
+              meticulously chosen to ensure your investment journey is both
+              secure and prosperous.
+            </p>
+            <div className=" w-[90%] lg:w-[60%] mx-auto">
+              <button className="btn bg-sky-500 border-none text-white font-semibold text-lg">
+                Expore
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="slide slide2 h-[20vh] md:h-[35vh] lg:h-[50vh]">
+            <h1 className="text-white text-2xl lg:text-5xl font-semibold md:font-bold leading-6 md:leading-8 mb-3 md:mb-0 w-[90%] lg:w-[60%] mx-auto">
+              Invest in Your Future <br /> with Our Real Estate Deals.
+            </h1>
+            <p className="text-white hidden md:block w-[90%] lg:w-[60%] mx-auto text-sm md:text-base leading-5 py-2 md:py-4">
+              At our platform, we prioritize your financial well-being with
+              utmost dedication. Rest assured, every real estate deal is
+              meticulously chosen to ensure your investment journey is both
+              secure and prosperous.
+            </p>
+            <div className=" w-[90%] lg:w-[60%] mx-auto">
+              <button className="btn bg-sky-500 border-none text-white font-semibold text-lg">
+                Expore
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="slide slide3 h-[20vh] md:h-[35vh] lg:h-[50vh]">
+            <h1 className="text-white text-2xl lg:text-5xl font-semibold md:font-bold leading-6 md:leading-8 mb-3 md:mb-0 w-[90%] lg:w-[60%] mx-auto">
+              Invest in Your Future <br /> with Our Real Estate Deals.
+            </h1>
+            <p className="text-white hidden md:block w-[90%] lg:w-[60%] mx-auto text-sm md:text-base leading-5 py-2 md:py-4">
+              At our platform, we prioritize your financial well-being with
+              utmost dedication. Rest assured, every real estate deal is
+              meticulously chosen to ensure your investment journey is both
+              secure and prosperous.
+            </p>
+            <div className=" w-[90%] lg:w-[60%] mx-auto">
+              <button className="btn bg-sky-500 border-none text-white font-semibold text-lg">
+                Expore
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };

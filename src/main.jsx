@@ -14,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import PrivateRoute from "./components/PrivateRoute";
 import About from "./pages/About";
 import UpdateProfile from "./pages/UpdateProfile";
+import Estate from "./components/Estate";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <PrivateRoute><About/></PrivateRoute>
+      },
+      {
+        path: "/estates",
+        element: <Estate/>
       }
     ],
   },
@@ -55,7 +60,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <HelmetProvider>
         <RouterProvider router={router} />
-        <ToastContainer/>
+        <ToastContainer autoClose={2002}/>
       </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>

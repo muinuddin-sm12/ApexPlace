@@ -43,6 +43,7 @@ const UpdateProfile = () => {
             name="email"
             placeholder={user.email}
             className="input input-bordered"
+            disabled
           />
           <input
             type="text"

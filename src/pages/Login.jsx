@@ -4,26 +4,29 @@ import { AuthContext } from "../components/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { IoMdEyeOff } from "react-icons/io";
 import { IoMdEye } from "react-icons/io";
+import { toast } from "react-toastify";
 // import { toast } from "react-toastify";
 
 const Login = () => {
   // const notify = () => toast.error("User not registered!");
+  const successNotify = () => toast.success("Login Successfully!");
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state || "/";
   const [showPassword, setShowPassword] = useState(false);
   const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    userLogin(email, password);
+    await userLogin(email, password);
     // navigate to home page
   };
 
   const handleSocialLogin = (socialProvider) => {
     socialProvider().then((result) => {
       if (result.user) {
+        successNotify()
         navigate(from);
       }
     });

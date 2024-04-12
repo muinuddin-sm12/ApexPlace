@@ -15,7 +15,7 @@ const Register = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const notify = () => toast.success("Successfully Registered!");
+  const notify = () => toast.success("Registered Successfully!");
   const { userRegister, updateUserProfile, logOut } = useContext(AuthContext);
   
   
@@ -26,7 +26,7 @@ const Register = () => {
     const url = e.target.url.value;
     const password = e.target.password.value;
 
-    console.log(name,url)
+    // console.log(name,url)
 
     if (password.length < 6) {
       setError("Password must be at least 6 Character!");
@@ -40,13 +40,14 @@ const Register = () => {
       setError("Password must have an Lowercase letter")
       return
     }else{
-      notify();
+      // notify();
     }
 
     setError("");
 
     try {
     await  userRegister(email, password);
+    notify()
     await updateUserProfile(name, url);
     navigate(from);
     await logOut();

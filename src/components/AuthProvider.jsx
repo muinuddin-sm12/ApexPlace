@@ -3,10 +3,18 @@ import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.init";
 import { GoogleAuthProvider } from "firebase/auth";
 import { Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const AuthContext = createContext(null);
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
+
+    // const [error, setError] = useState('')
+    const successNotify = () => toast.success("User Login Successfully!");
+    // const warnNotify = () => toast.warn("Logout Successfully!");
+    const errorNotify = () => toast.error("Something wrong!");
+
+
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const [user, setUser] = useState(null);
@@ -27,28 +35,18 @@ const AuthProvider = ({children}) => {
     // google login
     const googleLogin = () => {
         return signInWithPopup(auth, googleProvider)
-        // .then(result => {
-        //     const user = result.user;
-        //     console.log(user);
-        // }).catch(error => {
-        //     console.log(error.message)
-        // })
     }
     // github login
     const githubLogin = () => {
         return signInWithPopup(auth, githubProvider)
-        // .then(result => {
-        //     const user = result.user;
-        //     console.log(user);
-        // }).catch(error => {
-        //     console.log(error.message)
-        // })
     }
     // login user
     const userLogin = (email, password) => {
         return (signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            // console.log(result.user);
+            successNotify()
+        }).catch(() => {
+            errorNotify()
         }))
     }
     useEffect(() => {
@@ -71,6 +69,7 @@ const AuthProvider = ({children}) => {
     }
     const logOut = () =>{
         setUser(null)
+        // warnNotify();
         return signOut(auth);
     }
 

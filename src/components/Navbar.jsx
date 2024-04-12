@@ -1,10 +1,17 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const notify = () => toast.warn("Successfully LogOut!");
+
   // console.log(user);
+  const handleLogOut = async () => {
+    await logOut()
+    notify();
+  }
   return (
     <div className="navbar bg-base-100 max-w-[1536px] mx-auto px-4 md:px-10 py-4">
       <div className="navbar-start">
@@ -99,7 +106,7 @@ const Navbar = () => {
               />
             </div>
             <button
-              onClick={logOut}
+              onClick={handleLogOut}
               className="btn btn-sm text-white text-base bg-sky-400"
             >
               Logout
