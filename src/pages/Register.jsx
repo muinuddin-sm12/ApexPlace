@@ -58,7 +58,7 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-80px)]">
+    <div data-aos="zoom-in" className="min-h-[calc(100vh-438px)]">
       <Helmet>
         <title>ApexPlace | Register</title>
       </Helmet>
@@ -104,7 +104,7 @@ const Register = () => {
               </p>
             </div>
             {/* <button className="btn btn-primary">Register</button> */}
-            <input type="submit" className="btn bg-sky-300" value="Register" />
+            <input type="submit" className="btn bg-sky-400 text-white text-base" value="Register" />
           </form>
         </div>
       </div>

@@ -16,10 +16,10 @@ Invest in Your Future with Our Real Estate Deals.
 ## NPM Packages
 
 - [AOS Package](https://www.npmjs.com/package/aos)
-- [React spinner](https://www.npmjs.com/package/react-spinners)
 - [Animate.css](https://animate.style/)
-- [React tostify](https://www.npmjs.com/package/react-toastify)
 - [Swiper slider](https://swiperjs.com/)
+- [React spinner](https://www.npmjs.com/package/react-spinners)
+- [React tostify](https://www.npmjs.com/package/react-toastify)
 - [React icons](https://react-icons.github.io/react-icons/)
 
 ## Demo

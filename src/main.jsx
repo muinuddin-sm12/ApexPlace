@@ -47,10 +47,6 @@ const router = createBrowserRouter([
         path: "/about",
         element: <PrivateRoute><About/></PrivateRoute>
       },
-      {
-        path: "/estates",
-        element: <Estate/>
-      }
     ],
   },
 ]);

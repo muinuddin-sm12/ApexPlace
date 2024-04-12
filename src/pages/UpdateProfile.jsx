@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../components/AuthProvider";
+import { Helmet } from "react-helmet-async";
 // import { useLocation, useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
 
@@ -29,7 +30,10 @@ const UpdateProfile = () => {
 
     console.log(user)
   return (
-    <div className="hero h-[calc(100vh-80px)] flex justify-center items-start mt-32">
+    <div data-aos="zoom-in" className="hero h-[calc(100vh-438px)] flex justify-center items-start mt-32">
+      <Helmet>
+        <title>ApexPlace | Update Profile</title>
+      </Helmet>
       <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <form onSubmit={handleUpdateUser} className="card-body">
           <input

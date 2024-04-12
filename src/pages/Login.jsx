@@ -32,7 +32,7 @@ const Login = () => {
     });
   };
   return (
-    <div className="min-h-[calc(100vh-80px)]">
+    <div data-aos="zoom-in" className="min-h-[calc(100vh-438px)]">
       <Helmet>
         <title>ApexPlace | Login</title>
       </Helmet>
@@ -63,7 +63,7 @@ const Login = () => {
               </p>
             </div>
 
-            <input className="btn bg-sky-300" type="submit" value="Login" />
+            <input className="btn bg-sky-400 text-white text-base" type="submit" value="Login" />
 
             <div className="flex items-center py-3 gap-3">
               <h3 className="font-medium">Or login with,</h3>
