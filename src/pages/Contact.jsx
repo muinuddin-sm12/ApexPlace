@@ -2,11 +2,15 @@ import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   return (
-    <div className="h-[calc(100vh-316px)] flex justify-center items-center">
+    <div className="min-h-[calc(100vh-316px)] flex justify-center items-center py-10 md:py-0">
       <Helmet>
         <title>ApexPlace | Contact</title>
       </Helmet>
-      <section data-aos="zoom-in" data-aos-duration="1000" className="py-6 rounded-xl dark:bg-gray-100 dark:text-gray-900">
+      <section
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        className="py-6 rounded-xl dark:bg-gray-100 dark:text-gray-900"
+      >
         <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
           <div className="py-6 md:py-0 md:px-6">
             <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -63,7 +67,7 @@ const Contact = () => {
               <input
                 type="text"
                 placeholder="your name"
-                className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-default-600 dark:bg-gray-100"
+                className="block w-full p-2 text-sm rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-default-600 dark:bg-gray-100"
               />
             </label>
             <label className="block">
@@ -71,22 +75,19 @@ const Contact = () => {
               <input
                 type="email"
                 placeholder="username@gmail.com"
-                className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-default-600 dark:bg-gray-100"
+                className="block w-full p-2 text-sm rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-default-600 dark:bg-gray-100"
               />
             </label>
             <label className="block">
               <span className="mb-1">Message</span>
               <textarea
                 rows="3"
-                className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-default-600 dark:bg-gray-100"
+                className="block w-full p-2 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-default-600 dark:bg-gray-100"
               ></textarea>
             </label>
-            <button
-              type="button"
-              className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-default-600 dark:text-gray-50 focus:dark:ring-default-600 hover:dark:ring-default-600"
-            >
+            <p className="btn bg-sky-400 text-white text-lg">
               Submit
-            </button>
+            </p>
           </form>
         </div>
       </section>

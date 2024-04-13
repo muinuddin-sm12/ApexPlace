@@ -36,22 +36,29 @@ const UpdateProfile = () => {
       </Helmet>
       <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <form onSubmit={handleUpdateUser} className="card-body">
-          <input
-            type="text"
-            name="name"
-            placeholder={user.displayName}
-            className="input input-bordered"
-          />
+        <label htmlFor="email" className="block text-sm font-medium">Email</label>
           <input
             type="email"
             name="email"
-            placeholder={user.email}
+            id="email"
+            // placeholder={user.email}
+            value={user.email}
             className="input input-bordered"
-            disabled
+            readOnly
           />
+          <label htmlFor="name" className="block text-sm font-medium">User Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder={user.displayName}
+            className="input input-bordered"
+          />
+          <label htmlFor="url" className="block text-sm font-medium">Photo URL</label>
           <input
             type="text"
             name="url"
+            id="url"
             placeholder={user.photoURL}
             className="input input-bordered"
           />

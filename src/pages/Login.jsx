@@ -5,24 +5,25 @@ import { Helmet } from "react-helmet-async";
 import { IoMdEyeOff } from "react-icons/io";
 import { IoMdEye } from "react-icons/io";
 import { toast } from "react-toastify";
-// import { toast } from "react-toastify";
 
 const Login = () => {
-  // const notify = () => toast.error("User not registered!");
   const successNotify = () => toast.success("Login Successfully!");
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state || "/";
+  // cosnt [error, setError] = useState('')
   const [showPassword, setShowPassword] = useState(false);
-  const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
+  const { userLogin, googleLogin, githubLogin,error } = useContext(AuthContext);
   const handleLogin = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     await userLogin(email, password);
-    // navigate to home page
+    navigate(from);
+    // console.log(error)
+    // if(!error){
+    // }
   };
-
   const handleSocialLogin = (socialProvider) => {
     socialProvider().then((result) => {
       if (result.user) {
@@ -56,6 +57,7 @@ const Login = () => {
               />
               <span onClick={()=> setShowPassword(!showPassword)} className="absolute right-3 top-3 text-2xl">{showPassword? <IoMdEye/>:<IoMdEyeOff/>}</span>
             </div>
+            {/* {error && <small className="text-red-600">{error}</small>} */}
             <div className="flex items-center gap-1 py-3">
               Do not have any account?{" "}
               <p className="font-semibold">
