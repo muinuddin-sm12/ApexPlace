@@ -32,11 +32,11 @@ const Login = () => {
     });
   };
   return (
-    <div data-aos="zoom-in" className="min-h-[calc(100vh-438px)]">
+    <div data-aos="zoom-in" className="h-[calc(100vh-308px)] flex justify-center items-center ">
       <Helmet>
         <title>ApexPlace | Login</title>
       </Helmet>
-      <div className="hero mt-32">
+      <div className="hero">
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleLogin} className="card-body">
             <input

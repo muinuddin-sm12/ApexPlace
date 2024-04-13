@@ -4,10 +4,10 @@ const Footer = () => {
       <footer className="max-w-[1440px] mx-auto  footer p-10 md:px-[135px] text-base-content">
   <nav>
     <h6 className="footer-title">Services</h6> 
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+    <a className="link link-hover">Management</a>
+    <a className="link link-hover">Leasing</a>
+    <a className="link link-hover">Advisory</a>
+    <a className="link link-hover">Development</a>
   </nav> 
   <nav>
     <h6 className="footer-title">Company</h6> 
@@ -29,7 +29,7 @@ const Footer = () => {
         <span className="label-text">Enter your email address</span>
       </label> 
       <div className="join">
-        <input type="text" placeholder="username@site.com" className="input input-bordered join-item" /> 
+        <input type="text" placeholder="username@gmail.com" className="input input-bordered join-item" /> 
         <button className="btn bg-sky-400 text-white join-item">Subscribe</button>
       </div>
     </fieldset>

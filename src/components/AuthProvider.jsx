@@ -9,6 +9,8 @@ export const AuthContext = createContext(null);
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
 
+    const [loading, setLoading] = useState(true);
+
     // const [error, setError] = useState('')
     const successNotify = () => toast.success("User Login Successfully!");
     // const warnNotify = () => toast.warn("Logout Successfully!");
@@ -22,10 +24,10 @@ const AuthProvider = ({children}) => {
 
     // create user
     const  userRegister = (email, password) => {
+        setLoading(true)
         return (createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
             const user = result.user;
-            // console.log(user)
             if(user){
                 setUser(user)
                 return <Navigate to='/login'></Navigate>
@@ -34,14 +36,17 @@ const AuthProvider = ({children}) => {
     }
     // google login
     const googleLogin = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
     // github login
     const githubLogin = () => {
+        setLoading(true)
         return signInWithPopup(auth, githubProvider)
     }
     // login user
     const userLogin = (email, password) => {
+        setLoading(true)
         return (signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             successNotify()
@@ -53,8 +58,11 @@ const AuthProvider = ({children}) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             if(currentUser){
                 setUser(currentUser)
-            }else{
+                setLoading(false)
+            }
+            else{
                 setUser(null)
+                setLoading(false)
             }
         });
         return () => {
@@ -62,13 +70,17 @@ const AuthProvider = ({children}) => {
         }
     }, [])
     const updateUserProfile = (name, url) => {
+        // setLoading(true)
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: url,
         })
     }
     const logOut = () =>{
+        // loading(true)
+
         setUser(null)
+
         // warnNotify();
         return signOut(auth);
     }
@@ -77,6 +89,7 @@ const AuthProvider = ({children}) => {
         user,
         userRegister,
         userLogin,
+        loading,
         googleLogin,
         githubLogin,
         updateUserProfile,

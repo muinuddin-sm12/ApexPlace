@@ -44,7 +44,7 @@ const Navbar = () => {
           {isOpen && (
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[100] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[100] p-4 shadow bg-base-100 rounded-box w-40"
             >
               <NavLink
                 to="/"
@@ -68,6 +68,20 @@ const Navbar = () => {
                     }
                   >
                     Update Profile
+                  </NavLink>
+                </>
+              )}
+              {user && (
+                <>
+                  <NavLink
+                    to="/saved-property"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
+                        : "text-black"
+                    }
+                  >
+                    Saved Property
                   </NavLink>
                 </>
               )}
@@ -118,6 +132,20 @@ const Navbar = () => {
                 }
               >
                 Update Profile
+              </NavLink>
+            </>
+          )}
+          {user && (
+            <>
+              <NavLink
+                to="/saved-property"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
+                    : "text-black"
+                }
+              >
+                Saved Property
               </NavLink>
             </>
           )}

@@ -14,7 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import PrivateRoute from "./components/PrivateRoute";
 import About from "./pages/About";
 import UpdateProfile from "./pages/UpdateProfile";
-import Estate from "./components/Estate";
+import SavedProperty from "./pages/SavedProperty";
 
 const router = createBrowserRouter([
   {
@@ -44,9 +44,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute><UpdateProfile/></PrivateRoute>
       },
       {
+        path: "/saved-property",
+        element: <PrivateRoute><SavedProperty/></PrivateRoute>
+      },
+      {
         path: "/about",
         element: <PrivateRoute><About/></PrivateRoute>
       },
+      
     ],
   },
 ]);

@@ -4,6 +4,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { LuScale3D } from "react-icons/lu";
 import { Link, useParams } from "react-router-dom";
 import FadeLoader from "react-spinners/FadeLoader";
+import { saveProperty } from "../utilities/utility";
 
 const EstateDetails = () => {
   const { id } = useParams();
@@ -16,13 +17,15 @@ const EstateDetails = () => {
         setEstate(findEstate);
       });
   }, [id]);
-
   if (!estate) {
     return (
       <div className="flex justify-center items-center h-[calc(100vh-126px)]">
-        <FadeLoader color="#23BE0A" />
+        <FadeLoader color="#38BDF8" />
       </div>
     );
+  }
+  const handleSave = (singleEstate) => {
+    saveProperty(singleEstate)
   }
   const {
     image_url,
@@ -43,7 +46,10 @@ const EstateDetails = () => {
       <div className="w-full max-h-[420px] overflow-hidden mx-auto flex justify-center items-center">
         <img className="max-w-full" src={image_url} alt="" />
       </div>
-      <p className="text-2xl mt-4 font-semibold">{estate_title}</p>
+      <div className="flex justify-between items-center  mt-4">
+      <p className="text-2xl font-semibold">{estate_title}</p>
+      <p onClick={()=>handleSave(estate)} className="btn btn-sm text-white bg-sky-400 px-2 ">Save</p>
+      </div>
       <small className="text-zinc-400">{segment_name}</small>
 
       <div>

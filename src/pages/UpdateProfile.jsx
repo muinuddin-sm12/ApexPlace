@@ -30,7 +30,7 @@ const UpdateProfile = () => {
 
     console.log(user)
   return (
-    <div data-aos="zoom-in" className="hero h-[calc(100vh-438px)] flex justify-center items-start mt-32">
+    <div data-aos="zoom-in" className="hero h-[calc(100vh-316px)] flex justify-center items-center">
       <Helmet>
         <title>ApexPlace | Update Profile</title>
       </Helmet>
