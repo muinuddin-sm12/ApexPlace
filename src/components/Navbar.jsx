@@ -85,20 +85,16 @@ const Navbar = () => {
                   </NavLink>
                 </>
               )}
-              {user && (
-                <>
-                  <NavLink
-                    to="/about"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
-                        : "text-black"
-                    }
-                  >
-                    About
-                  </NavLink>
-                </>
-              )}
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
+                    : "text-black"
+                }
+              >
+                Contact
+              </NavLink>
             </ul>
           )}
         </div>
@@ -149,20 +145,16 @@ const Navbar = () => {
               </NavLink>
             </>
           )}
-          {user && (
-            <>
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
-                    : "text-black"
-                }
-              >
-                About
-              </NavLink>
-            </>
-          )}
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? "text-sky-500 border border-sky-500 px-2 rounded-md py-1"
+                : "text-black"
+            }
+          >
+            Contact
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end">

@@ -12,9 +12,9 @@ import Register from "./pages/Register";
 import ErrorPage from "./components/ErrorPage";
 import { ToastContainer } from 'react-toastify';
 import PrivateRoute from "./components/PrivateRoute";
-import About from "./pages/About";
 import UpdateProfile from "./pages/UpdateProfile";
 import SavedProperty from "./pages/SavedProperty";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -48,8 +48,8 @@ const router = createBrowserRouter([
         element: <PrivateRoute><SavedProperty/></PrivateRoute>
       },
       {
-        path: "/about",
-        element: <PrivateRoute><About/></PrivateRoute>
+        path: "/contact",
+        element: <Contact/>
       },
       
     ],
