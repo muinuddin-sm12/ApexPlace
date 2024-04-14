@@ -16,7 +16,9 @@ const ErrorPage = () => {
               But dont worry, you can find plenty of other things on our
               homepage.
             </p>
-            <Link className="btn text-base border-2 border-gray-200" to="/">Back to HomePage</Link>
+            <Link className="btn text-base border-2 border-gray-200" to="/">
+              Back to HomePage
+            </Link>
           </div>
         </div>
       </section>

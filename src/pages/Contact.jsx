@@ -85,9 +85,7 @@ const Contact = () => {
                 className="block w-full p-2 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-default-600 dark:bg-gray-100"
               ></textarea>
             </label>
-            <p className="btn bg-sky-400 text-white text-lg">
-              Submit
-            </p>
+            <p className="btn bg-sky-400 text-white text-lg">Submit</p>
           </form>
         </div>
       </section>

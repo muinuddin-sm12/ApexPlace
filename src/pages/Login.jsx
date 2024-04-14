@@ -11,29 +11,29 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state || "/";
-  // cosnt [error, setError] = useState('')
   const [showPassword, setShowPassword] = useState(false);
-  const { userLogin, googleLogin, githubLogin,error } = useContext(AuthContext);
+  const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     await userLogin(email, password);
     navigate(from);
-    // console.log(error)
-    // if(!error){
-    // }
   };
   const handleSocialLogin = (socialProvider) => {
     socialProvider().then((result) => {
       if (result.user) {
-        successNotify()
+        successNotify();
         navigate(from);
       }
     });
   };
   return (
-    <div data-aos="zoom-in" className="h-[calc(100vh-308px)] flex justify-center items-center ">
+    <div
+      data-aos="zoom-in"
+      className="h-[calc(100vh-308px)] flex justify-center items-center "
+    >
       <Helmet>
         <title>ApexPlace | Login</title>
       </Helmet>
@@ -49,15 +49,19 @@ const Login = () => {
             />
             <div className="flex relative">
               <input
-                type={showPassword? "text": "password"}
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="password"
                 className="input input-bordered w-full"
                 required
               />
-              <span onClick={()=> setShowPassword(!showPassword)} className="absolute right-3 top-3 text-2xl">{showPassword? <IoMdEye/>:<IoMdEyeOff/>}</span>
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-3 text-2xl"
+              >
+                {showPassword ? <IoMdEye /> : <IoMdEyeOff />}
+              </span>
             </div>
-            {/* {error && <small className="text-red-600">{error}</small>} */}
             <div className="flex items-center gap-1 py-3">
               Do not have any account?{" "}
               <p className="font-semibold">
@@ -65,7 +69,11 @@ const Login = () => {
               </p>
             </div>
 
-            <input className="btn bg-sky-400 text-white text-base" type="submit" value="Login" />
+            <input
+              className="btn bg-sky-400 text-white text-base"
+              type="submit"
+              value="Login"
+            />
 
             <div className="flex items-center py-3 gap-3">
               <h3 className="font-medium">Or login with,</h3>

@@ -25,8 +25,8 @@ const EstateDetails = () => {
     );
   }
   const handleSave = (singleEstate) => {
-    saveProperty(singleEstate)
-  }
+    saveProperty(singleEstate);
+  };
   const {
     image_url,
     estate_title,
@@ -47,8 +47,13 @@ const EstateDetails = () => {
         <img className="max-w-full" src={image_url} alt="" />
       </div>
       <div className="flex justify-between items-center  mt-4">
-      <p className="text-2xl font-semibold">{estate_title}</p>
-      <p onClick={()=>handleSave(estate)} className="btn btn-sm text-white bg-sky-400 px-2 ">Save</p>
+        <p className="text-2xl font-semibold">{estate_title}</p>
+        <p
+          onClick={() => handleSave(estate)}
+          className="btn btn-sm text-white bg-sky-400 px-2 "
+        >
+          Save
+        </p>
       </div>
       <small className="text-zinc-400">{segment_name}</small>
 
@@ -80,7 +85,9 @@ const EstateDetails = () => {
         {status}
       </div>
       <div className="py-4">
-        <Link className="btn btn-sm bg-sky-400 text-white font-medium" to="/">Go Back</Link>
+        <Link className="btn btn-sm bg-sky-400 text-white font-medium" to="/">
+          Go Back
+        </Link>
       </div>
     </div>
   );

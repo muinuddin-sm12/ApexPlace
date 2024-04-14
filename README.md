@@ -2,8 +2,6 @@
 
 Invest in Your Future with Our Real Estate Deals.
 
-
-
 ## Features
 
 - Responsiveness
@@ -11,7 +9,6 @@ Invest in Your Future with Our Real Estate Deals.
 - Cross platform
 - User Register and Login
 - Profile update
-
 
 ## NPM Packages
 
@@ -24,8 +21,7 @@ Invest in Your Future with Our Real Estate Deals.
 
 ## Demo
 
-* Live Preview: https://assignment-9-294ac.web.app/
-
+- Live Preview: https://assignment-9-294ac.web.app/
 
 ## Authors
 

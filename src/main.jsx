@@ -10,7 +10,7 @@ import AuthProvider from "./components/AuthProvider";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ErrorPage from "./components/ErrorPage";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import PrivateRoute from "./components/PrivateRoute";
 import UpdateProfile from "./pages/UpdateProfile";
 import SavedProperty from "./pages/SavedProperty";
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -29,29 +29,40 @@ const router = createBrowserRouter([
       },
       {
         path: "/estate/:id",
-        element: <PrivateRoute><EstateDetails /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <EstateDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
-        element: <Login/>
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Register/>
+        element: <Register />,
       },
       {
         path: "/update-profile",
-        element: <PrivateRoute><UpdateProfile/></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/saved-property",
-        element: <PrivateRoute><SavedProperty/></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <SavedProperty />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/contact",
-        element: <Contact/>
+        element: <Contact />,
       },
-      
     ],
   },
 ]);
@@ -61,7 +72,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <HelmetProvider>
         <RouterProvider router={router} />
-        <ToastContainer autoClose={2002}/>
+        <ToastContainer autoClose={2002} position="top-center" />
       </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>

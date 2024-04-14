@@ -19,7 +19,6 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const successNotify = () => toast.success("User Login Successfully!");
   const errorNotify = () => toast.error("Email or Password doesn't match!");
-
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
   const [user, setUser] = useState(null);
@@ -55,7 +54,9 @@ const AuthProvider = ({ children }) => {
         successNotify();
       })
       .catch(() => {
-        errorNotify();
+        errorNotify().then(() => {
+          window.location.href = "/login";
+        });
       });
   };
   useEffect(() => {
@@ -73,14 +74,12 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
   const updateUserProfile = (name, url) => {
-    // setLoading(true)
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: url,
     });
   };
   const logOut = () => {
-    // loading(true)
     setUser(null);
     return signOut(auth);
   };
@@ -95,7 +94,6 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     logOut,
   };
-
   return (
     <div>
       <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

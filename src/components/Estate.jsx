@@ -15,7 +15,11 @@ const Estate = ({ estate }) => {
   } = estate;
   // console.log(estate)
   return (
-    <div data-aos="zoom-in" data-aos-duration="1000" className="border p-2 relative flex flex-col justify-between">
+    <div
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+      className="border p-2 relative flex flex-col justify-between"
+    >
       <div className="h-[200px] overflow-hidden">
         <img className="object-cover h-full w-full" src={image_url} alt="" />
       </div>

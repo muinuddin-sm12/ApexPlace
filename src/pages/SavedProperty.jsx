@@ -10,18 +10,18 @@ const SavedProperty = () => {
     const storedProperties = getProperties();
     setProperty(storedProperties);
   }, []);
-  if(property.length<1){
-    return <Empty/>
+  if (property.length < 1) {
+    return <Empty />;
   }
-  console.log(property);
+  // console.log(property);
   return (
-    <div className="min-h-[calc(100vh-316px)] ">
+    <div className="min-h-[calc(100vh-348px)] mt-10">
       <Helmet>
         <title>ApexPlace | Saved Property</title>
       </Helmet>
-      {
-        property.map(p=> <SavedCart property={p} key={p.id}></SavedCart>)
-      }
+      {property.map((p) => (
+        <SavedCart property={p} key={p.id}></SavedCart>
+      ))}
     </div>
   );
 };
