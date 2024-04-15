@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const notify = () => toast.warn("Successfully LogOut!");
+  const notify = () => toast.warning("Successfully LogOut!");
   const [isOpen, setIsOpen] = useState(false);
 
   // console.log(user);

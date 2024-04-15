@@ -50,13 +50,12 @@ const EstateDetails = () => {
         <p className="text-2xl font-semibold">{estate_title}</p>
         <p
           onClick={() => handleSave(estate)}
-          className="btn btn-sm text-white bg-sky-400 px-2 "
+          className="btn btn-sm text-white bg-green-400 px-4"
         >
           Save
         </p>
       </div>
       <small className="text-zinc-400">{segment_name}</small>
-
       <div>
         <ul>
           <p className="text-zinc-900 font-medium">Facilities:</p>

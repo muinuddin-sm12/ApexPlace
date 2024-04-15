@@ -43,7 +43,7 @@ const Login = () => {
             <input
               type="email"
               name="email"
-              placeholder="email"
+              placeholder="Email"
               className="input input-bordered"
               required
             />
@@ -51,7 +51,7 @@ const Login = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
-                placeholder="password"
+                placeholder="Password"
                 className="input input-bordered w-full"
                 required
               />

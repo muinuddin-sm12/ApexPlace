@@ -18,7 +18,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const successNotify = () => toast.success("User Login Successfully!");
-  const errorNotify = () => toast.error("Email or Password doesn't match!");
+  const errorNotify = () => toast.error("Invalid email or password!");
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
   const [user, setUser] = useState(null);
