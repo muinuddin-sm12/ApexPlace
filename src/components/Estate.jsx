@@ -54,5 +54,5 @@ const Estate = ({ estate }) => {
 export default Estate;
 
 Estate.propTypes = {
-  estate: PropTypes.array,
+  estate: PropTypes.object,
 };
