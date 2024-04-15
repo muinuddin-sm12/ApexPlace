@@ -17,6 +17,7 @@ const UpdateProfile = () => {
     }
     window.location.reload();
   };
+  console.log(user);
   return (
     <div
       data-aos="zoom-in"
@@ -27,17 +28,21 @@ const UpdateProfile = () => {
       </Helmet>
       <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <form onSubmit={handleUpdateUser} className="card-body">
-          <label htmlFor="email" className="block text-sm font-medium">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={user.email}
-            className="input input-bordered"
-            readOnly
-          />
+          {user.email && (
+            <>
+              <label htmlFor="email" className="block text-sm font-medium">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value={user?.email}
+                className="input input-bordered"
+                readOnly
+              />
+            </>
+          )}
           <label htmlFor="name" className="block text-sm font-medium">
             User Name
           </label>
