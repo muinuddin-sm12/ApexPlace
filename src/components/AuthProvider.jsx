@@ -74,12 +74,14 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
   const updateUserProfile = (name, url) => {
+    setLoading(true)
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: url,
     });
   };
   const logOut = () => {
+    setLoading(true)
     setUser(null);
     return signOut(auth);
   };
