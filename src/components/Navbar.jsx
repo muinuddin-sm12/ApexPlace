@@ -161,7 +161,7 @@ const Navbar = () => {
         {user ? (
           <div className="flex items-center gap-2">
             <div
-              className="w-12 h-12 rounded-full flex justify-center items-center  border-2 tooltip  tooltip-bottom"
+              className="w-12 h-12 rounded-full overflow-hidden  flex justify-center items-center  border-2 tooltip  tooltip-bottom"
               data-tip={user?.displayName || "user name not found"}
             >
               <img
